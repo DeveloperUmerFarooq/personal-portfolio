@@ -23,7 +23,7 @@ export function Header({ identity, navigation }) {
 
   return (
     <header className="header">
-      <a className="brand" href="#top" aria-label={`${identity.name}, home`} onClick={closeMenu}><span className="brand__mark">{identity.initials}</span><span className="brand__name">{identity.name}</span></a>
+      <a className="brand" href="#top" aria-label={`${identity.name}, home`} onClick={closeMenu}><span className="brand__mark"><span>{identity.initials}</span></span><span className="brand__name">{identity.name}</span></a>
       <button className={`menu-button${open ? ' menu-button--open' : ''}`} type="button" aria-expanded={open} aria-controls="site-navigation" onClick={() => setOpen((value) => !value)}><span /><span /><span className="sr-only">Toggle navigation</span></button>
       <nav id="site-navigation" className={`navigation${open ? ' navigation--open' : ''}`} aria-label="Main navigation">
         {navigation.map((item) => <a key={item.href} href={item.href} onClick={closeMenu}>{item.label}</a>)}
