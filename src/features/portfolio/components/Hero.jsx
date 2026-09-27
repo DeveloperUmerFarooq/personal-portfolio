@@ -6,14 +6,14 @@ export function Hero({ config, identity }) {
       <div className="hero__stage">
         <div className="hero__ambient" data-parallax="0.055" aria-hidden="true"><span>{identity.initials}</span></div>
         <div className="hero__content">
-          <div className="hero__eyebrow" data-reveal><p>{config.eyebrow}</p><p className="availability"><span />{config.availability}</p></div>
+          <div className="hero__eyebrow"><p>{config.eyebrow}</p><p className="availability"><span />{config.availability}</p></div>
           <div className="hero__title"><h1>
             <span className="text-mask"><span className="text-mask__line text-mask__line--one">{config.lead}</span></span>
             <span className="text-mask"><em className="text-mask__line text-mask__line--two">{config.emphasis}</em></span>
             <span className="text-mask"><span className="text-mask__line text-mask__line--three">{config.closing}</span></span>
           </h1></div>
-          <div className="hero__bottom" data-reveal><a className="round-link" href="#work" aria-label="View selected work"><Arrow direction="down" /></a><p>{config.introduction}</p></div>
-          <div className="hero__stats" data-reveal>{config.statistics.map((item) => <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}</div>
+          <div className="hero__bottom"><a className="round-link" href="#work" aria-label="View selected work"><Arrow direction="down" /></a><p>{config.introduction}</p></div>
+          <div className="hero__stats">{config.statistics.map((item) => <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}</div>
         </div>
         <div className="hero__intro" aria-hidden="true">
           <div className="hero__intro-lockup">
