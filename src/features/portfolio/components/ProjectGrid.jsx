@@ -1,10 +1,30 @@
 import { SectionLabel } from '../../../components/ui/SectionLabel.jsx'
 
+const workSignals = ['Built for impact', 'Protected by NDA', 'Designed to scale', 'Measured in outcomes']
+
 export function ProjectGrid({ projects }) {
   return (
     <section className="work" id="work">
       <SectionLabel index="02" light>Selected work</SectionLabel>
-      <div className="work__heading" data-reveal><h2>Built for impact.<br />Presented with discretion.</h2><p>Many projects are protected by NDA. These summaries show the kind of problems I solve while keeping client details private.</p></div>
+      <div className="work__heading" data-reveal>
+        <div className="work__title">
+          <p className="work__overline">Selected cases · 2024—2026</p>
+          <h2 className="work__headline" aria-label="Quiet work. Loud outcomes.">
+            <span><b>Quiet work.</b></span>
+            <span><b><em>Loud</em> outcomes.</b></span>
+          </h2>
+        </div>
+        <div className="work__note">
+          <div className="work__signal" aria-hidden="true"><span /><strong>NDA</strong></div>
+          <p>Many projects are protected by NDA. These summaries reveal the problems, thinking and contribution while keeping client details private.</p>
+          <small><i /> Confidential by default</small>
+        </div>
+      </div>
+      <div className="work__rail" aria-hidden="true">
+        <div className="work__rail-track">
+          {[...workSignals, ...workSignals].map((signal, index) => <span key={`${signal}-${index}`}>{signal}<i>↗</i></span>)}
+        </div>
+      </div>
       <div className="projects">{projects.map((project) => (
         <article className={`project project--${project.accent}`} key={project.index} data-reveal>
           <div className="project__top"><span>{project.index} / {project.year}</span>{project.confidential && <span className="nda">NDA protected</span>}</div>
