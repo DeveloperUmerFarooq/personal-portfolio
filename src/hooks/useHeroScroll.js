@@ -5,6 +5,7 @@ const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value))
 export function useHeroScroll() {
   useEffect(() => {
     const hero = document.querySelector('[data-hero-scroll]')
+    const header = document.querySelector('.header')
     if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
 
     let frame = null
@@ -18,6 +19,7 @@ export function useHeroScroll() {
       const lineOne = clamp((progress - 0.34) / 0.18)
       const lineTwo = clamp((progress - 0.41) / 0.18)
       const lineThree = clamp((progress - 0.48) / 0.18)
+      const navigationReveal = clamp((progress - 0.48) / 0.12)
 
       hero.style.setProperty('--hero-progress', progress.toFixed(4))
       hero.style.setProperty('--hero-intro-opacity', introFade.toFixed(4))
@@ -28,6 +30,11 @@ export function useHeroScroll() {
       hero.style.setProperty('--hero-line-one-y', `${((1 - lineOne) * 115).toFixed(2)}%`)
       hero.style.setProperty('--hero-line-two-y', `${((1 - lineTwo) * 115).toFixed(2)}%`)
       hero.style.setProperty('--hero-line-three-y', `${((1 - lineThree) * 115).toFixed(2)}%`)
+      if (header) {
+        header.style.opacity = navigationReveal.toFixed(4)
+        header.style.transform = `translate(-50%, ${((1 - navigationReveal) * -16).toFixed(2)}px)`
+        header.style.pointerEvents = navigationReveal > 0.9 ? 'auto' : 'none'
+      }
       frame = null
     }
 
@@ -42,6 +49,11 @@ export function useHeroScroll() {
       window.removeEventListener('scroll', requestRender)
       window.removeEventListener('resize', requestRender)
       if (frame !== null) window.cancelAnimationFrame(frame)
+      if (header) {
+        header.style.removeProperty('opacity')
+        header.style.removeProperty('transform')
+        header.style.removeProperty('pointer-events')
+      }
     }
   }, [])
 }
