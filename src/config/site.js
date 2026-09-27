@@ -1,11 +1,12 @@
 /** Main content configuration. Change these values to personalise the site. */
 export const siteConfig = {
   identity: {
-    name: 'Your Name',
-    initials: 'YN',
+    name: 'Muhammad Umer Farooq',
+    initials: 'UF',
     role: 'Laravel + React Developer',
     location: 'Pakistan · Working worldwide',
-    email: 'hello@example.com',
+    email: 'umerfarooq.web.dev@gmail.com',
+    phone: '+92 305 4079045',
   },
   navigation: [
     { label: 'Expertise', href: '#expertise' },
