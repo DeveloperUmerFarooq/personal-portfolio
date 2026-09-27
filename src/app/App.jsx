@@ -8,9 +8,11 @@ import { Capabilities } from '../features/portfolio/components/Capabilities.jsx'
 import { ProjectGrid } from '../features/portfolio/components/ProjectGrid.jsx'
 import { Profile } from '../features/portfolio/components/Profile.jsx'
 import { useReveal } from '../hooks/useReveal.js'
+import { useParallax } from '../hooks/useParallax.js'
 
 function App() {
   useReveal()
+  useParallax()
   useEffect(() => { document.title = `${siteConfig.identity.name} — ${siteConfig.identity.role}` }, [])
   return (
     <div className="site-shell">
