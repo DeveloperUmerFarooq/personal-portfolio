@@ -1,0 +1,7 @@
+:root {
+  --ink: #11120f; --paper: #f1f0e9; --paper-strong: #faf9f4; --line: rgba(17, 18, 15, .2); --line-dark: rgba(255, 255, 255, .18);
+  --acid: #d9ff43; --cobalt: #445bff; --coral: #ff7058; --muted: #706f68;
+  --display: 'Arial Narrow', 'Aptos Narrow', 'Helvetica Neue', sans-serif; --body: 'Helvetica Neue', Arial, sans-serif; --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --page: min(1400px, calc(100vw - 64px));
+}
+@media (max-width: 720px) { :root { --page: calc(100vw - 32px); } }

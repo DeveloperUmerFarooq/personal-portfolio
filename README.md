@@ -1,19 +1,36 @@
-# React + Vite
+# Configurable full-stack portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio built with React and Vite. The presentation layer is shared across the stack-specific Git branches; content is controlled through small configuration files.
 
-Currently, two official plugins are available:
+## Project structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```text
+src/
+├── app/                            # Application composition
+├── components/
+│   ├── layout/                     # Header and footer
+│   └── ui/                         # Reusable visual primitives
+├── config/
+│   ├── site.js                     # Identity, copy, services and toolkit
+│   └── projects.js                 # Case studies and NDA flags
+├── features/portfolio/components/  # Portfolio page sections
+├── hooks/                          # Shared browser behaviour
+└── styles/                         # Tokens, global rules and page styling
+```
 
-## React Compiler
+## Personalise the site
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+1. Edit `src/config/site.js` for your name, email, introduction, services and skills.
+2. Edit `src/config/projects.js` for project summaries. Project URLs are intentionally not part of the schema.
+3. Keep `confidential: true` on projects that must show the NDA badge.
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+All graphics are rendered from local CSS or local SVG files. The site does not request fonts, images or scripts from third-party CDNs.
 
-## Expanding the ESLint configuration
+## Local development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Create a production build with `npm run build`.
