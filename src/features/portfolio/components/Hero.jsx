@@ -17,8 +17,18 @@ export function Hero({ config, identity }) {
         </div>
         <div className="hero__intro" aria-hidden="true">
           <div className="hero__intro-lockup">
-            <span>{identity.name}</span>
-            <p>{config.introTitle}</p>
+            <span className="hero__name" aria-label={identity.name}>
+              {Array.from(identity.name).map((character, index) => (
+                <span
+                  className={`hero__name-letter${character === ' ' ? ' hero__name-letter--space' : ''}`}
+                  style={{ '--char-delay': `${80 + index * 45}ms` }}
+                  key={`${character}-${index}`}
+                >
+                  {character === ' ' ? '\u00a0' : character}
+                </span>
+              ))}
+            </span>
+            <p>{config.introTitle.split(' ').map((word) => <span key={word}>{word}</span>)}</p>
           </div>
           <small><i /> Scroll to discover <i /></small>
         </div>
