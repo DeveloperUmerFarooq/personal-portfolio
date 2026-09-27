@@ -9,12 +9,9 @@ export function useReveal() {
     }
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible')
-          observer.unobserve(entry.target)
-        }
+        entry.target.classList.toggle('is-visible', entry.isIntersecting)
       })
-    }, { threshold: 0.14 })
+    }, { threshold: 0.08, rootMargin: '-8% 0px -8% 0px' })
     elements.forEach((element) => observer.observe(element))
     return () => observer.disconnect()
   }, [])
