@@ -37,7 +37,9 @@
 .hero__stats div { padding:20px 20px 0 0; display:flex; flex-direction:column; gap:2px; }
 .hero__stats strong { font-size:15px; }.hero__stats span { color:var(--muted); font-size:13px; }
 .hero__intro { position:absolute; z-index:7; inset:0; display:grid; place-items:center; overflow:hidden; color:var(--paper-strong); background:var(--ink); opacity:var(--hero-intro-opacity,1); pointer-events:none; will-change:opacity; }
-.hero__intro > span { display:block; color:var(--acid); font:700 clamp(5rem,16vw,16rem)/.75 var(--display); letter-spacing:-.09em; white-space:nowrap; transform:scale(var(--hero-name-scale,1)); transform-origin:center; will-change:transform; }
+.hero__intro-lockup { display:flex; align-items:center; flex-direction:column; gap:28px; transform:scale(var(--hero-name-scale,1)); transform-origin:center; will-change:transform; }
+.hero__intro-lockup span { display:block; color:var(--acid); font:700 clamp(5rem,16vw,16rem)/.75 var(--display); letter-spacing:-.09em; white-space:nowrap; }
+.hero__intro-lockup p { margin:0; font:500 clamp(.75rem,1.2vw,1rem)/1 var(--mono); letter-spacing:.28em; text-transform:uppercase; }
 .hero__intro small { position:absolute; bottom:44px; left:50%; display:flex; align-items:center; gap:14px; font:11px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; transform:translateX(-50%); white-space:nowrap; }
 .hero__intro small i { width:34px; height:1px; background:currentColor; opacity:.5; }
 .section-label { width:var(--page); margin:0 auto; display:flex; gap:18px; align-items:center; padding:26px 0; border-bottom:1px solid var(--line); font:12px/1 var(--mono); text-transform:uppercase; letter-spacing:.06em; }

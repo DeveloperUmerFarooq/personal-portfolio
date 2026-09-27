@@ -19,6 +19,7 @@ export const siteConfig = {
     closing: 'that hold up in the real world.',
     introduction: 'From product thinking to production code, I help ambitious teams turn difficult ideas into clear, fast and dependable software.',
     availability: 'Available for select projects',
+    introTitle: 'Full Stack Engineer',
     statistics: [
       { value: 'Full-cycle', label: 'Strategy to launch' },
       { value: 'Remote', label: 'Built for collaboration' },

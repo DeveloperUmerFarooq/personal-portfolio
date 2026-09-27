@@ -16,7 +16,10 @@ export function Hero({ config, identity }) {
           <div className="hero__stats" data-reveal>{config.statistics.map((item) => <div key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}</div>
         </div>
         <div className="hero__intro" aria-hidden="true">
-          <span>{identity.name}</span>
+          <div className="hero__intro-lockup">
+            <span>{identity.name}</span>
+            <p>{config.introTitle}</p>
+          </div>
           <small><i /> Scroll to discover <i /></small>
         </div>
       </div>
