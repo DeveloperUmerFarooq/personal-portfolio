@@ -9,10 +9,12 @@ import { ProjectGrid } from '../features/portfolio/components/ProjectGrid.jsx'
 import { Profile } from '../features/portfolio/components/Profile.jsx'
 import { useReveal } from '../hooks/useReveal.js'
 import { useParallax } from '../hooks/useParallax.js'
+import { useHeroScroll } from '../hooks/useHeroScroll.js'
 
 function App() {
   useReveal()
   useParallax()
+  useHeroScroll()
   useEffect(() => { document.title = `${siteConfig.identity.name} — ${siteConfig.identity.role}` }, [])
   return (
     <div className="site-shell">
